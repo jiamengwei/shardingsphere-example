@@ -1,11 +1,11 @@
-package sharding.jdbc.example.service;
+package read.write.splitting.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import sharding.jdbc.example.entity.User;
+import read.write.splitting.entity.User;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author JiaMengwei

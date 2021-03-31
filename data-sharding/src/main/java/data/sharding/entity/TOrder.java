@@ -1,11 +1,9 @@
-package sharding.jdbc.example.entity;
+package data.sharding.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * <p>
@@ -13,17 +11,17 @@ import java.util.Date;
  * </p>
  *
  * @author JiaMengwei
- * @since 2021-03-26
+ * @since 2021-03-31
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class User implements Serializable {
+public class TOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer age;
+    private Integer orderId;
 
-    private Date birthday;
+    private Integer userId;
 
 
 }

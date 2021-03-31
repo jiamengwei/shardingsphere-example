@@ -1,11 +1,11 @@
-package sharding.jdbc.example.mapper;
+package read.write.splitting.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import sharding.jdbc.example.entity.User;
+import read.write.splitting.entity.User;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
  * @author JiaMengwei
