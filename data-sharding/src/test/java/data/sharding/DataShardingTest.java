@@ -1,5 +1,6 @@
 package data.sharding;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import data.sharding.entity.PassRecord;
 import data.sharding.entity.TConfig;
@@ -10,10 +11,8 @@ import data.sharding.service.IPassRecordService;
 import data.sharding.service.ITConfigService;
 import data.sharding.service.ITOrderService;
 import org.junit.Test;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.common.record.Record;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -97,4 +96,12 @@ public class DataShardingTest {
         passRecordService.saveBatch(list);
     }
 
+    @Test
+    public void shardingByDateQueryTest(){
+        QueryWrapper queryWrapper = new QueryWrapper();
+//        queryWrapper.lt("check_time", LocalDateTime.now());
+        queryWrapper.gt("check_time", LocalDateTime.of(2021,01,01,00,00,00));
+        queryWrapper.lt("check_time", LocalDateTime.of(2021,01,02,00,00,00));
+        passRecordMapper.selectList(queryWrapper).stream().forEach(System.out::println);
+    }
 }
